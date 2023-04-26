@@ -8,7 +8,7 @@
   }
 }%%
 
-graph LR
+graph TOP_BOTTOM
 
   subgraph core
     common
