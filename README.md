@@ -8,7 +8,7 @@
   }
 }%%
 
-graph TOP_BOTTOM
+graph TB
 
   subgraph core
     common
