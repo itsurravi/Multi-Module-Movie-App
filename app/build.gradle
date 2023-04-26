@@ -3,6 +3,15 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+    id "dev.iurysouza.modulegraph" version "0.3.0"
+}
+
+moduleGraphConfig {
+    readmePath.set("$projectDir/README.md")
+    heading.set("### Dependency Diagram")
+//    theme.set(Theme.NEUTRAL) // optional
+//    orientation.set(Orientation.LEFT_TO_RIGHT) //optional
+//    linkText.set(LinkText.CONFIGURATION) // optional
 }
 
 android {
