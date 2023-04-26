@@ -22,7 +22,7 @@ internal object InternalMovieFeatureApi : FeatureApi {
         ) {
             composable(MovieFeature.movieScreenRoute) {
                 val viewModel = hiltViewModel<MovieSearchViewModel>()
-                MovieScreen(viewModel)
+                MovieScreen(navController, viewModel)
             }
         }
     }

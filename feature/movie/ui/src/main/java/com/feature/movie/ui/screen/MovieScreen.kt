@@ -2,6 +2,7 @@ package com.feature.movie.ui.screen
 
 import android.util.Log
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,11 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.feature.movie.ui.screen.viewmodel.MovieSearchViewModel
 
 @Composable
 fun MovieScreen(
+    navController: NavHostController,
     viewModel: MovieSearchViewModel
 ) {
     val result = viewModel.movieList.value
@@ -83,7 +86,10 @@ fun MovieScreen(
                             AsyncImage(
                                 model = it.imageUrl,
                                 contentDescription = null,
-                                contentScale = ContentScale.Fit
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier.clickable {
+                                    navController.navigate("movie_details/${it.id}")
+                                }
                             )
                         }
                     }
